@@ -108,10 +108,10 @@ syncrepl rid={{ db.slave.rid | default(openldap_slave_rid) }}
 {% if openldap_modsdir != "" %}
 moduleload dynlist
 {% endif %}
-overlay dynlist
-dynlist-attrset groupOfURLs memberURL member
+#overlay dynlist
+#dynlist-attrset groupOfURLs memberURL member
 
-overlay ppolicy
+#overlay ppolicy
 index   objectClass     pres,eq
 {% for idx in db.indexes %}
 index	{{ idx.0 }}	{{ idx.1 }}
